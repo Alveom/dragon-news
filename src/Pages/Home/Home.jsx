@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Category from "../../Components/Home/Category";
 import ShortNews from "../../Components/Home/ShortNews";
+import Navber from "../../Components/Header/Navber";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -43,6 +44,8 @@ function Home() {
 
   return (
     <div className="hide-scrollbar  poppins">
+      <Navber />
+
       <section id="category-section">
         <h1 className="font-semibold py-4">All Categories</h1>
         <div className="h-60 overflow-y-scroll hide-scrollbar">

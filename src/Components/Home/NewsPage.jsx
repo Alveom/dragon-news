@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 function NewsPage() {
   const { id } = useParams();
@@ -22,8 +22,8 @@ function NewsPage() {
       setLoading(false);
     }
   }, []);
-  console.log(user.details);
-  console.log(id);
+  console.log(data);
+
   return (
     <div>
       <h1 className="font-bold my-1">Dragon news</h1>
@@ -40,6 +40,11 @@ function NewsPage() {
           <p className="font-light">{user.details}</p>
         </>
       )}
+      <Link to={"/"}>
+        <button className="btn bg-[#D72050] text-white my-4 rounded-lg">
+          All News
+        </button>
+      </Link>
     </div>
   );
 }

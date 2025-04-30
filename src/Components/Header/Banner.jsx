@@ -39,15 +39,6 @@ function Banner() {
         <span className="font-lightbold">{dayName}</span>,
         <span className="font-semibold text-[#00000086]">{` ${monthName} ${datePresent}, ${year}`}</span>
       </p>
-      <div className="bg-[#403f3f1a] flex items-center my-2 p-3 rounded-lg">
-        <p className="text-left px-6 py-4 rounded-lg w-40 bg-[#D72050] text-white">
-          Latest news
-        </p>
-        <marquee>
-          {" "}
-          Bangladesh's Export Earnings Show Strong Growth in Q1 2025.
-        </marquee>
-      </div>
     </div>
   );
 }
