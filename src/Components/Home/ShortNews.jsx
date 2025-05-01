@@ -5,10 +5,10 @@ function ShortNews({ newsid, title, image_url }) {
   return (
     <div className="my-6">
       <NavLink to={`/newspage/${newsid}`}>
-        <div className="w-80 object-cover rounded-lg overflow-hidden">
+        <div className=" object-cover rounded-lg overflow-hidden">
           <img src={image_url} alt="show" />
         </div>
-        <h3 className="w-80 h-20 overflow-hidden text-lg font-bold">{title}</h3>
+        <h3 className="h-20 overflow-hidden text-lg font-bold">{title}</h3>
       </NavLink>
     </div>
   );
