@@ -3,6 +3,7 @@ import Category from "../../Components/Home/Category";
 import ShortNews from "../../Components/Home/ShortNews";
 import Navber from "../../Components/Header/Navber";
 import News from "../../Components/Home/News";
+import GoogleLogin from "../../Components/GoogleLogin";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -45,6 +46,15 @@ function Home() {
 
   return (
     <div className="hide-scrollbar poppins">
+      <div className="bg-[#403f3f1a] flex items-center my-2 p-3 rounded-lg">
+        <p className="text-left px-6 py-4 rounded-lg w-40 bg-[#D72050] text-white">
+          Latest news
+        </p>
+        <marquee>
+          {" "}
+          Bangladesh's Export Earnings Show Strong Growth in Q1 2025.
+        </marquee>
+      </div>
       <Navber />
       <div className="grid grid-cols-12 gap-2">
         <div className="col-span-3">
@@ -93,6 +103,7 @@ function Home() {
         </div>
         <div className="col-span-3">
           <h3>Login</h3>
+          <GoogleLogin />
         </div>
       </div>
     </div>

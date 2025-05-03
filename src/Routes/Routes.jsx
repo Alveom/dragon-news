@@ -4,6 +4,9 @@ import Home from "../Pages/Home/Home";
 import NewsPage from "../Components/Home/NewsPage";
 import News from "../Components/Home/News";
 import Error from "../Pages/Error";
+import LoginPage from "../Components/Login/LoginPage";
+import RegisterPage from "../Components/Login/RegisterPage";
+import Login from "../Pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +29,20 @@ const router = createBrowserRouter([
       {
         path: "/news",
         Component: News,
+      },
+      {
+        path: "/login",
+        Component: Login,
+        children: [
+          {
+            path: "login-page",
+            Component: LoginPage,
+          },
+          {
+            path: "register-page",
+            Component: RegisterPage,
+          },
+        ],
       },
     ],
   },
