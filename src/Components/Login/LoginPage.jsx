@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { login, setUser } = use(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    alert(`Email: ${email}\nPassword: ${password}`);
+    const from = e.target;
+    const email = from.email.value;
+    const password = from.password.value;
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
   };
 
   return (
@@ -21,9 +32,8 @@ function LoginPage() {
             </label>
             <input
               type="email"
+              name="email"
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -33,9 +43,8 @@ function LoginPage() {
             </label>
             <input
               type="password"
+              name="password"
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -48,7 +57,6 @@ function LoginPage() {
           <h3>
             Don't have an account?{" "}
             <NavLink className={"text-red-600"} to={"/login/register-page"}>
-              {" "}
               Register
             </NavLink>
           </h3>

@@ -2,7 +2,6 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 
 function Category({ id, name }) {
-  console.log(name);
   return (
     <div>
       <NavLink to={`/category/${id}`}>
@@ -33,6 +32,5 @@ function bgChange(e) {
   e.target.classList.add("text-[#FF3D3D]");
   e.target.classList.remove("font-light");
   e.target.classList.add("font-bold");
-  console.log(e.target);
 }
 export default Category;

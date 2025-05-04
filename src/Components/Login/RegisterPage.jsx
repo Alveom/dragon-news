@@ -15,7 +15,7 @@ function RegisterPage() {
     createUser(email, password)
       .then((result) => {
         setUser(result.user);
-        // console.log(user);
+
         alert("Registration successful");
       })
       .catch((error) => {

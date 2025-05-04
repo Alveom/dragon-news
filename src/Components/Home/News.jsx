@@ -26,7 +26,7 @@ function News() {
       setLoading(false);
     }
   }, []);
-  console.log(data);
+
   return (
     <div className="h-130 overflow-auto hide-scrollbar">
       {loading ? (

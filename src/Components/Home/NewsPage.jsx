@@ -22,7 +22,6 @@ function NewsPage() {
       setLoading(false);
     }
   }, []);
-  console.log(data);
 
   return (
     <div>

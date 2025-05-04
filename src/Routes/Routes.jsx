@@ -7,6 +7,7 @@ import Error from "../Pages/Error";
 import LoginPage from "../Components/Login/LoginPage";
 import RegisterPage from "../Components/Login/RegisterPage";
 import Login from "../Pages/Login";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/newspage/:id",
-        Component: NewsPage,
+        element: (
+          <PrivateRoute>
+            <NewsPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/news",
